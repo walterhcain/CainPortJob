@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+#tablet {
+    position: relative;
+    background: url('img/frame.png') no-repeat;
+    background-size: contain;
+    width: 1000px;
+    height: 700px;
+}
+
+.tablet-container {
+    position: absolute;
+    left: 58px;
+    top: 60px;
+    width: auto;
+    background-size: contain;
+    overflow: hidden;
+    height: 79%;
+    width: 88.5%;
+    background: #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.tablet-footer {
+    position: absolute;
+    left: 46.7%;
+    top: 90.5%;
+}
+
+.tablet-footer > .line {
+    width: 3vw;
+    height: 8px;
+    background-color: rgb(129, 129, 129);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tablet-footer > .line:hover {
+    background-color: rgb(161, 161, 161);
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .4s;
+    padding: 1rem;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.page::-webkit-scrollbar {
+    display: none;
+}  
+
+#main {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    background: rgb(119, 113, 119)/*url('img/background.jpg') no-repeat*/;
+    background-size: cover;
+}
+
+#manifest {
+    display: relative;
+    /*grid-template-columns: .3fr 1fr;*/
+    background: url('img/loginbackground.png') no-repeat;
+    background-size: cover;
+}
+
+#manifest > .content {
+    position: relative;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    background: url('img/paper.png') no-repeat;
+    border-radius: 10px;
+    left: 5%;
+}
+
+#manifest > .content > h2{
+    font-weight: 500;
+}
+
+#manifest > .content > table {
+    position: relative;
+    border: 1px solid black;
+    width: 80%;
+    align-items: center;
+    background: #ffffff;
+    left: 10%
+}
+
+#manifest > .content > th, td {
+    position: relative;
+    border: 1px solid black;
+    width: 80%;
+    align-items: center;
+}
+
+tr:nth-child(odd) {
+    background: #eeeaea;
+}
+
+tr:nth-child(even) {
+    background: #c9c5c5;
+}
+
+.manifestback {
+    width: 5%;
+    height: 2%;
+}
+
+
+#barcode {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    background: #ffffff /*url('img/background.jpg') no-repeat*/;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    align-items: center;
+}
+
+#barcode > .content {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#login {
+    display: relative;
+    grid-template-columns: .3fr 1fr;
+    background: url('img/loginbackground.png') no-repeat;
+    background-size: cover;
+}
+
+
+#login > .content {
+    position: absolute; 
+    right: 5px;
+    align-items: center;
+    width: 50%;
+    top: 20%;
+    padding: 10px;
+}
+#login > .content > img {
+    position: relative; 
+    width: 70%;
+    left: 15%;
+    padding: 0px;
+}
+
+#login > .content > h1{
+    position: relative; 
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+#submitmenu {
+    display: relative;
+    grid-template-columns: .3fr 1fr;
+    background: url('img/loginbackground.png') no-repeat;
+    background-size: cover;
+}
+
+#submitmenu > .content {
+    position: absolute; 
+    right: 5px;
+    align-items: center;
+    width: 50%;
+    top: 15%;
+    padding: 10px;
+}
+
+#submitmenu > .leftcontent {
+    font-family: 'Poppins', sans-serif;
+    position: absolute; 
+    left: 5px;
+    align-items: center;
+    width: 50%;
+    bottom: 0%;
+    padding: 5px;
+}
+
+#submitmenu > .leftcontent > h1{
+    position: relative; 
+    align-items: center;
+    text-align: left;
+    left: 10px;
+    width: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#submitmenu > .content > w3-input w3-border {
+    position: relative; 
+    width: 70%;
+    left: 15%;
+    padding: 0px;
+}
+
+#submitmenu > .content > h1{
+    position: relative; 
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#submitmenu > .leftcontent > input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #submitmenu > .leftcontent > input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitmenu > .content > #containerSubmit {
+    position: relative; 
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#submitmenu > .content > input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+#submitmenu > .content > input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+#submitmenu > .content > input[type=submit]:hover {
+    background-color: #45a049;
+}
+  
+#submitmenu > .content > div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.page {
+    display: flex;
+}
+
+.containerbox {
+    position: absolute;
+    font-weight: 600;
+}
+
+.checkmark {
+    height: 25px;
+    width: 25px;
+}
+
+.submitbutton {
+    position: relative;
+    left: 28%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: rgb(255, 30, 0);
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #000000;
+    width: 40%;
+    font-weight: 500;
+}
+  
+.submitbutton:active {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transform: translateY(4px);
+}
+
+.manifestbutton {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    background-color: rgb(0, 140, 255);
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #000000;
+    width: 40%;
+    font-weight: 500;
+}
+  
+.manifestbutton:active {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transform: translateY(4px);
+}
+
+.page > .content {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(37, 37, 37);
+    width: 90%;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+a {
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page > .content > h1 {
+    width: 100%;
+}
+
+.page > .content > p {
+    font-weight: 400;
+}
+
+.page > .content > .img-container {
+    /*width: 100%;*/
+    overflow: hidden;
+    border-radius: 10px;
+    margin-block: 5px;
+    box-shadow: 0 0 4px rgb(5, 5, 5, 0.5);
+    width:100%;
+    display: flex;
+    
+}
+
+.page > .content > .img-container > img {
+    width: 100%;
+    transform: scale(1.5);
+}
+
+.page > .content > .img-container > video {
+    width: 100%;
+}
+
+
+

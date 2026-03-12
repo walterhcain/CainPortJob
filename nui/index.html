@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div id='app' data-app>
+        <div id='tablet' v-show='opened'> 
+            <div class='tablet-container'>
+                <div class='page' id='main' v-if='currentPage == "main"'>
+                    <div class='content'>
+                        <h1>Container Submission Form</h1>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, temporibus odio accusamus quae quod veritatis nihil maiores incidunt quasi vero modi, ad, facere mollitia rem quas dolorem doloribus eaque distinctio?</p>
+                        <br>
+                        <h1>Intrebari frecvente</h1>
+                        <br>
+                        <p>
+                            <b class='subtitle'>Question?</b><br>
+                            Answer
+                        </p>
+                        <br>
+                        <p>
+                            <b class='subtitle'>Question?</b><br>
+                            Answer
+                        </p>
+                        <br>
+                    </div>
+                </div>
+                <div class='page' id='barcode' v-if='currentPage == "barcode"'>
+                    <div class='content'>
+                        <img src="img/barcode.png" >
+                        <h1>{{ barcode }}</h1>
+                    </div>
+                </div>
+                <div class='page' id='login' v-if='currentPage == "login"'>
+                    <div class='content'>
+                        <h1>Longshoreman Username</h1>
+                        <img src="img/login.png" >
+                        <br>
+                        <br>
+                        <h1>Password</h1>
+                        <img src="img/password.png" >
+                        <br>
+                    </div>
+                </div>
+                <div class='page' id='submitmenu' v-if='currentPage == "submitmenu"'>
+                    <div class='leftcontent'>
+                        <h1>Search Manifest</h1>
+                        <input type="text" id="manifesttext" name="manifesttext" placeholder="Search Barcode #..">
+                        <button class="button manifestbutton" v-on:click="searchManifest('manifesttext')">Search Manifest</button>
+                    </div>
+                    <div class='content'>
+                        <h1>Barcode</h1>
+                        <input type="text" id="barcodeinput" name="barcodeinput" placeholder="Container Barcode..">
+                        <br>
+                        <h1>Bay #</h1>
+                        <input type="text" id="bayinput" name="bayinput" placeholder="Bay Location #..">
+                        <br>
+                        <label class="containerbox">Front Damaged?
+                            <input type="checkbox" id="frontdam">
+                            <span class="checkmark"></span>
+                        </label>
+                        <br>
+                        <label class="containerbox">Side Damaged?
+                            <input type="checkbox" id="sidedam">
+                            <span class="checkmark"></span>
+                        </label>
+                        <br>
+                        <label class="containerbox">Back Damaged?
+                            <input type="checkbox" id="backdam">
+                            <span class="checkmark"></span>
+                        </label>
+                        <br>
+                        <br>
+                        <button class="button submitbutton" v-on:click="registerContainer('barcodeinput', 'bayinput', 'frontdam', 'sidedam','backdam')">Register Container</button>
+                    </div>
+                </div>
+                <div class='page' id='manifest' v-if='currentPage == "manifest"'>
+                    <div class='content'>
+                        <br>
+                        <h1>CONTAINER MANIFEST</h1>
+                        <br>
+                        <h2>Origin: {{ origin }}</h2>
+                        <br>
+                        <h2>Barcode: {{ barcode }}</h2>
+                        <br>
+                        <table>
+                            <tr>
+                                <th>Cargo</th>
+                            </tr>
+                            <tr>
+                                <td>{{ manifest[0] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ manifest[1] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ manifest[2] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ manifest[3] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ manifest[4] }}</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <button class="button manifestback" v-on:click="switchPage('submitmenu')">Back</button>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class='tablet-footer'>
+                <div class='line' v-on:click='switchPage("main")'></div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://unpkg.com/vue@2.6.14'></script>
+    <script src='index.js'></script>
+</body>
+</html>
